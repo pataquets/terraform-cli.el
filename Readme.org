@@ -1,0 +1,43 @@
+* Terraform CLI interface for Emacs
+** Description
+Provides an Emacs interface to Terraform CLI. This package is heavily inspired
+on the awesome [[https://magit.vc][Magit]] package and uses [[https://github.com/magit/transient][Transient]] for its UI.
+
+Any =terraform= CLI subcommand is within the package scope.
+
+** Development status
+This package is in development and I'm adding features as I need them and
+I learn how to implement them, also. So far, the main focus is in Terraform
+development workflow commands (=init=, =plan=), which I'm currently using on a
+daily basis. Expect things to break from time to time.
+
+Help & PRs are welcome, as long as they fit with the package scope. There is a
+placeholder =terraform-cli-todo= function in case you want to send a PR which is
+not complete or want to show interest in any subcommand.
+
+This is my first published Emacs package, so bear with my code and, if you have
+any feedback or suggestion, be my guest. It will be much appreciated.
+
+** Configuration and usage
+By default, each command invocation will be output to the message buffer.
+You can disable it, by setting the option to =nil=:
+#+begin_src elisp
+(setq terraform-cli-run-debug nil)
+#+end_src
+
+You can set the Terraform binary name (=terraform= by default). Useful if you're
+using [[https://opentofu.org/][OpenTofu]], for example:
+#+begin_src elisp
+(setq terraform-cli-binary-name "tofu")
+#+end_src
+
+The package provides no default key bindings. To use the package, invoke the
+=terraform-cli-dispatch= command. It displays the =terraform= root command.
+Other avaliable commands are:
+- =terraform-cli-init=
+- =terraform-cli-plan=
+
+** ToDo
+- Publish on [[https://melpa.org/][MELPA]] ([[https://github.com/melpa/melpa/blob/master/CONTRIBUTING.org][docs]]). PR: melpa/melpa#8779
+- Add =apply= subcommand.
+- Add =workspace= subcommand.
