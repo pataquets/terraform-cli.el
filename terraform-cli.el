@@ -8,11 +8,15 @@
 ;; Keywords: external, processes, tools, terraform
 ;; URL: https://github.com/pataquets/terraform-cli.el
 
+;; SPDX-License-Identifier: GPL-3.0-or-later
+
 ;;; Commentary:
+
 ;; Provides an Emacs interface to Terraform CLI. This package is heavily inspired
 ;; on the awesome Magit package and uses Transient for its UI.
 
 ;;; Code:
+
 (require 'transient)
 ;; Use 'transient-showcase' functionality for development, if present.
 (when (package-installed-p 'transient-showcase)
