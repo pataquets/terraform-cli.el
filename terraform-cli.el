@@ -41,7 +41,7 @@
   (let ((cmd (format "%s %s %s" terraform-cli-binary-name
                      command (string-join switches " "))))
     (when terraform-cli-run-debug
-      (message (format "terraform-cli-run cmd: %s" cmd)))
+      (message "terraform-cli-run cmd: %s" cmd))
     (compile cmd)))
 
 (defun terraform-cli-todo ()
